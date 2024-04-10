@@ -1,9 +1,10 @@
 //create cars api using express
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
-
+app.use(cors());
 
 app.use(express.json());
 
@@ -31,7 +32,7 @@ app.put('/cars/:id', (req, res) => {
 });
 
 //delete car
-app.delete('/cars/:id', (req, res) => {
+removeCar(req.params.id) = app.delete('/cars/:id', (req, res) => {
     const id = req.params.id;
     const index = cars.findIndex(car => car.id === id);
     cars.splice(index, 1);
