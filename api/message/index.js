@@ -2,14 +2,11 @@
 const express = require('express');
 const app = express();
 
-const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 
-app.use(bodyParser.json()); //epress to body-parser
 
-const cars = require('./cars.json');
-const express = require('express');
-const bodyParser = require('body-parser');
+app.use(express.json());
+
 const cars = require('./cars.json');
 
 //get all cars
