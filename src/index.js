@@ -16,7 +16,7 @@ app.get('/cars', (req, res) => {
 });
 
 //get car by id
-app.get('/cars/:id', (req, res) => {
+app.get('./cars/:id', (req, res) => {
     const id = req.params.id;
     const car = cars.find(car => car.id === id);
     res.json(car);
@@ -32,7 +32,7 @@ app.put('/cars/:id', (req, res) => {
 });
 
 //delete car
-removeCar(req.params.id) = app.delete('/cars/:id', (req, res) => {
+removeCar(req.params.id) = app.delete('./cars/:id', (req, res) => {
     const id = req.params.id;
     const index = cars.findIndex(car => car.id === id);
     cars.splice(index, 1);
@@ -40,7 +40,7 @@ removeCar(req.params.id) = app.delete('/cars/:id', (req, res) => {
 });
 
 //add car
-app.post('/cars', (req, res) => {
+app.post('./cars', (req, res) => {
     console.log(req);
     const newCar = req.body;
     console.log(newCar);
